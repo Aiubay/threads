@@ -15,7 +15,6 @@ function Topbar() {
         <Image src="/assets/logo.svg" alt="logo" width={28} height={28} />
         <p className="text-header3-bold text-light-1 max-xs:hidden">Threads</p>
       </Link>
-      <SignInButton />
       <div className="flex items-center gap-1">
         <div className="block md:hidden">
           <SignedIn>
