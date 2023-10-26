@@ -137,7 +137,6 @@ export async function addCommentToThread(
   path: string
 ) {
   connectToDB();
-  console.log("Masuk add Comment to Threads");
   try {
     const originalThread = await Thread.findById(threadId);
     console.log(originalThread);

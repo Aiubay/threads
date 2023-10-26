@@ -6,12 +6,15 @@ import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { ChangeEvent } from "react";
+
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 
 import { Input } from "../ui/input";
@@ -28,8 +31,9 @@ interface Props {
 
 function Comment({ threadId, currentUserImg, currentUserId }: Props) {
   const pathname = usePathname();
+  type commentValidation = z.infer<typeof CommentValidation>;
 
-  const form = useForm<z.infer<typeof CommentValidation>>({
+  const form = useForm<commentValidation>({
     resolver: zodResolver(CommentValidation),
     defaultValues: {
       thread: "",
@@ -73,6 +77,7 @@ function Comment({ threadId, currentUserImg, currentUserId }: Props) {
                   className="no-focus text-light-1 outline-none"
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />

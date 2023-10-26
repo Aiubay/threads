@@ -104,6 +104,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     // ✅ This will be type-safe and validated.
     console.log(values);
   };
+
   return (
     <Form {...form}>
       <form
@@ -198,6 +199,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
